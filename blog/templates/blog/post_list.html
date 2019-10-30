@@ -3,18 +3,16 @@
         <title>БЛОГЪ</title>
     </head>
     <body>
-        <div>
-            <h1><a href="/">БЛОГЪ ШУХАЛЕВИЧА</a></h1>
-        </div>
+    <div>
+    <h1><a href="/">Кучерявый</a></h1>
+</div>
 
-        <div>
-            <h2><a href="">My first Volk</a></h2>
-            <p>Не важно кто - важно кто волкъ</p>
-        </div>
-
-        <div>
-            <h2><a href="">My second Volk</a></h2>
-            <p>Если выступилъ в цирке одинъ разъ - то это только первый разъ. Если второй - то это уже не волкъ.</p>
-        </div>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
